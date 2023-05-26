@@ -11,8 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\Services\" />
-    <Folder Include="Helpers\Repositories\" />
+    <Folder Include="Controllers\BeerControllers\" />
     <Folder Include="Models\Dto\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>

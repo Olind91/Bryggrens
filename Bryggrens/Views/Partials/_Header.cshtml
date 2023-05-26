@@ -25,12 +25,28 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <!-- ml-auto för att placera elementen till höger -->
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
+                @if (signInManager.IsSignedIn(User))
+                {
+                    var user = await userManager.GetUserAsync(User);
+
+                    if (user != null)
+                    {
+                        if (await userManager.IsInRoleAsync(user, "admin"))
+                        {
+                            <a asp-controller="admin" asp-action="Index" class="link">Admin</a>
+                        }
+                        else
+                        {
+                            <a class="link" asp-controller="Account" asp-action="Index">@User.Identity?.Name</a>
+                        }
+                    }
+
+                    <a asp-controller="logout" asp-action="Index" class="link">Logout</a>
+                }
+                else
+                {
+                    <a asp-controller="Login" asp-action="Index" class="link">Login</a>
+                }
             </ul>
         </div>
     </div>

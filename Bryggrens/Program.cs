@@ -1,5 +1,8 @@
 using Bryggrens.Contexts;
-
+using Bryggrens.Helpers.Repositories;
+using Bryggrens.Helpers.Services;
+using Bryggrens.Models.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,14 +17,30 @@ builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configura
 
 
 //Services
-
+builder.Services.AddScoped<AddressService>();
+builder.Services.AddScoped<AuthService>();
 
 
 
 //Repositories
+builder.Services.AddScoped<AddressRepository>();
+builder.Services.AddScoped<UserAddressRepository>();
 
+//Konfigurerar hur login ska fungera
+builder.Services.AddIdentity<AppUser, IdentityRole>(x =>
+{
+    x.SignIn.RequireConfirmedAccount = false;
+    x.Password.RequiredLength = 8;
+    x.User.RequireUniqueEmail = true;
+}).AddEntityFrameworkStores<DataContext>();
 
+builder.Services.ConfigureApplicationCookie(x =>
+{
+    x.LoginPath = "/login";
+    x.LogoutPath = "/"; ;
+    x.AccessDeniedPath = "/AccessDenied";
 
+});
 
 
 
