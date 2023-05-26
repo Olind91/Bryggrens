@@ -1,14 +1,11 @@
-﻿
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container">
+﻿<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container mb-5">
         <a class="navbar-brand" href="/">Bryggrens</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav mx-auto">
+                <!-- mx-auto centrera elementen -->
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -16,18 +13,25 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" asp-controller="About" asp-action="Index">About Us</a>
-                        <a class="dropdown-item" href="/events">Events</a>
-                        <a class="dropdown-item" href="/locations">Locations</a>
-                        <a class="dropdown-item" href="/tours">Brewery Tours</a>
-                        <a class="dropdown-item" href="/blog">Blog/News</a>
+                        <a class="dropdown-item" asp-controller="Events" asp-action="Index">Events</a>
+                        <a class="dropdown-item" asp-controller="Locations" asp-action="Index">Locations</a>
+                        <a class="dropdown-item" asp-controller="Tours" asp-action="Index">Brewery Tours</a>
+                        <a class="dropdown-item" asp-controller="Blog" asp-action="Index">Blog/News</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Contacts" asp-action="Index">Contact us</a>
-                </li>                
-                
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <!-- ml-auto för att placera elementen till höger -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
             </ul>
         </div>
-       
     </div>
 </nav>
