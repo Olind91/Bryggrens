@@ -1,0 +1,22 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+
+.btn-everton {
+    background-color: #003399;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+.btn-everton:hover {
+    background-color: #002b80;
+}

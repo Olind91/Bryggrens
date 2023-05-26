@@ -1,0 +1,63 @@
+﻿@model AboutVM
+
+<section class="about">
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="image-container">
+                    <img src="@Model.ProfilePictureUrl" alt="Profile Picture" class="about-image">
+                    <div class="image-overlay"></div>
+                </div>
+                <ul class="info-list">
+                    <li><i class="fas fa-star"></i> Award-winning brewer</li>
+                    <li><i class="fas fa-beer"></i> Craft beer enthusiast</li>
+                    <li><i class="fas fa-globe"></i> Beer connoisseur with international experience</li>
+                    <li><i class="fas fa-trophy"></i> Champion of local beer competitions</li>
+                </ul>
+            </div>
+            <div class="col-md-6">                
+                <h3>@Model.Name</h3>
+                <p class="about-description">
+                    Meet Rydgren, a bearded man with an adventurous spirit. With his boundless energy and endurance,
+                    he can run remarkable distances, conquering trails and pushing his limits.
+                    Just like his love for running, Rydgren has a passion for beer that matches his zest for life.
+                    He savors his brews just as he cherishes the scorching hot and sweaty summers.
+                    Whether it's exploring new trails or savoring a refreshing pint,
+                    Rydgren embodies a vibrant enthusiasm for life's exhilarating experiences.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <div class="container about-container">
+       
+
+        <div class="about-buttons">
+            <button id="missionBtn" class="active" onclick="toggleContent('mission')">Mission and Values</button>
+            <button id="brewingBtn" onclick="toggleContent('brewing')">Brewing Process</button>
+        </div>
+
+        <div id="missionContent">
+        
+            At Bryggrens, we are not only passionate about crafting exceptional beers but also share a deep love for Everton Football Club. Our mission is to brew outstanding beers that unite beer enthusiasts and Everton fans alike, celebrating the spirit of the club and creating unforgettable experiences.
+            Our values align with the Evertonian ethos, and we are proud to embody the following principles:
+        <ul>
+            <li><b>Quality:</b> Just like the dedication and precision exhibited on the football pitch, we are committed to brewing beers of the highest quality. Our attention to detail ensures that every sip delivers a winning taste.</li>
+            <li><b>Community:</b> We believe in the power of community, both on and off the field. As Evertonians, we are passionate about fostering a sense of togetherness and camaraderie among our fellow fans and beer enthusiasts. We actively engage with the Everton community and contribute to local initiatives that make a positive impact.</li>
+            <li><b>Innovation:</b> Similar to Everton's history of pioneering football strategies, we embrace innovation in brewing. We continuously explore new flavors, techniques, and beer styles, pushing boundaries and providing our customers with innovative brews that excite their taste buds.</li>
+            <li><b>Heritage:</b> Everton has a rich heritage and a loyal fanbase, and we celebrate this legacy in our brewery. We draw inspiration from the club's history, traditions, and iconic moments to create beers that pay homage to Everton's spirit and resonate with Evertonians worldwide.</li>
+      
+        </ul>
+        <p>By intertwining the worlds of football and brewing, we aim to create a unique experience for Everton fans, beer enthusiasts, and the broader community. Join us in raising a glass to the Toffees and the pursuit of great beer!</p>
+        </div>
+
+        <div id="brewingContent" style="display: none;">
+            Brewing Process: Describe the brewing process followed at the brewery, from selecting the finest ingredients to the brewing techniques used. You can share insights into the craftsmanship and attention to detail that goes into creating each batch of beer.
+        </div>
+    </div>
+
+
