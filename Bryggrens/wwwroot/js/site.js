@@ -19,3 +19,25 @@
         document.getElementById('missionContent').style.display = 'none';
     }
 }
+
+$(document).ready(function () {
+    $('.carousel-items').slick({
+        dots: false,
+        arrows: true,
+        prevArrow: $('.carousel-prev'),
+        nextArrow: $('.carousel-next'),
+        slidesToShow: 1,
+        slidesToScroll: 1
+        // Add more options and customizations as needed
+    });
+
+    // Trigger carousel navigation on button click
+    $('.carousel-prev').click(function () {
+        $('.carousel-items').slick('slickPrev');
+    });
+
+    $('.carousel-next').click(function () {
+        $('.carousel-items').slick('slickNext');
+    });
+});
+
