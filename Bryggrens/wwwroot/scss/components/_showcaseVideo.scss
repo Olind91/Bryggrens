@@ -1,0 +1,22 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+
+
+.video-showcase {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 40%;
+    overflow: hidden;
+}
+
+#showcaseVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
