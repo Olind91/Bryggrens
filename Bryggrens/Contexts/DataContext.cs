@@ -20,6 +20,12 @@ namespace Bryggrens.Contexts
         //Contact
         public DbSet<ContactFormEntity> ContactForm { get; set; }
 
+        //Beer
+        public DbSet<BeerEntity> Beer { get; set; }
+        public DbSet<CategoryEntity> Category { get; set; }
+        public DbSet<BeerCategoriesEntity> BeerCategories { get; set; }
+
+
     }
 
 }

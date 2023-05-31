@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\BeerControllers\" />
-    <Folder Include="Models\Dto\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
