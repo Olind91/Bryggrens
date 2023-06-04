@@ -2,29 +2,33 @@
     <div class="container">
         <h2>Our Beer Selection</h2>
 
+
+       
+
         <div class="beer-categories">
-            <button class="active" data-filter="all">All Beers</button>
-            <button data-filter="neipa">NEIPAs</button>
-            <button data-filter="sour">Sour beers</button>
-            <button data-filter="pale">Pale Ales</button>
+            <button id="allBtn" class="active" onclick="filterBeers('all')">All Beers</button>
+            <button id="neipaBtn" onclick="filterBeers('neipa')">NEIPAs</button>
+            <button id="sourBtn"  onclick="filterBeers('sour')">Sour beers</button>
+            <button id="paleBtn"  onclick="filterBeers('pale-ale')">Pale Ales</button>
         </div>
 
+
         <div class="beer-list">
-            <div class="beer-item" data-category="neipa">
+            <a class="beer-item" data-category="neipa" asp-controller="Category" asp-action="Neipa">
                 <img src="/images/neipa.jpg" alt="Beer 1">
                 <h3>NEIPA Beer</h3>
                 <p>A hazy and juicy IPA with tropical hop flavors and a smooth mouthfeel.</p>
-            </div>
-            <div class="beer-item" data-category="sour">
+            </a>
+            <a class="beer-item" data-category="sour" asp-controller="Category" asp-action="Sour">
                 <img src="/images/sour-beers.jpg" alt="Beer 2">
                 <h3>Sour Beer</h3>
                 <p>A tart and refreshing beer with a tangy, acidic flavor profile and hints of fruit or funkiness.</p>
-            </div>
-            <div class="beer-item" data-category="pale-ale">
+            </a>
+            <a class="beer-item" data-category="pale-ale" asp-controller="Category" asp-action="PaleAle">
                 <img src="/images/paleale.jpg" alt="Beer 3">
                 <h3>Pale Ale</h3>
                 <p>A balanced and hop-forward beer with a crisp and malty profile, showcasing citrusy or floral hop flavors.</p>
-            </div>
+            </a>
             <!-- Add more beer items with different categories -->
         </div>
     </div>

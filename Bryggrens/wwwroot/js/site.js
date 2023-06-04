@@ -23,17 +23,10 @@ $(document).ready(function () {
         $('.carousel-items').slick('slickNext');
     });
 
-    $(window).scroll(function () {
-        var scroll = $(window).scrollTop();
-        if (scroll > 0) {
-            $("#welcome-screen").hide();
-            $("#content").show();
-        } else {
-            $("#welcome-screen").show();
-            $("#content").hide();
-        }
-    });
+   
 });
+
+
 
 function toggleContent(section) {
     // Toggle button active state
@@ -56,5 +49,67 @@ function toggleContent(section) {
         document.getElementById('missionContent').style.display = 'none';
     }
 }
+
+window.onscroll = function () {
+    var popupBox = document.getElementById("popup-box");
+    var scrollPosition = window.scrollY || window.pageYOffset;
+    var windowHeight = window.innerHeight;
+    var documentHeight = document.documentElement.scrollHeight;
+
+    var distanceFromBottom = 400;
+
+    if (scrollPosition + windowHeight >= documentHeight - distanceFromBottom) {
+        popupBox.style.opacity = 1;
+        popupBox.classList.remove("hidden");
+    } else {
+        popupBox.style.opacity = 0;
+        popupBox.classList.add("hidden");
+    }
+};
+
+function closePopup() {
+    var popupBox = document.getElementById("popup-box");
+    popupBox.style.opacity = 0;
+    popupBox.classList.add("hidden");
+}
+
+
+function filterBeers(category) {
+    // Toggle button active state
+    var allBtn = document.getElementById('allBtn');
+    var neipaBtn = document.getElementById('neipaBtn');
+    var sourBtn = document.getElementById('sourBtn');
+    var paleBtn = document.getElementById('paleBtn');
+
+    if (category === 'all') {
+        allBtn.classList.add('active');
+        neipaBtn.classList.remove('active');
+        sourBtn.classList.remove('active');
+        paleBtn.classList.remove('active');
+
+        // Show all beer items
+        var beerItems = document.getElementsByClassName('beer-item');
+        for (var i = 0; i < beerItems.length; i++) {
+            beerItems[i].style.display = 'block';
+        }
+    } else {
+        allBtn.classList.remove('active');
+        neipaBtn.classList.remove('active');
+        sourBtn.classList.remove('active');
+        paleBtn.classList.remove('active');
+
+        // Show beer items of the selected category and hide others
+        var beerItems = document.getElementsByClassName('beer-item');
+        for (var i = 0; i < beerItems.length; i++) {
+            var beerItem = beerItems[i];
+            if (beerItem.getAttribute('data-category') === category) {
+                beerItem.style.display = 'block';
+            } else {
+                beerItem.style.display = 'none';
+            }
+        }
+    }
+}
+
 
 

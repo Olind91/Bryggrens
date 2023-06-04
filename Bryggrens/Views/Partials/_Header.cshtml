@@ -12,13 +12,15 @@
                         About
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" asp-controller="About" asp-action="Index">About Us</a>
+                        <a class="dropdown-item" asp-controller="About" asp-action="Index">About Us</a>                        
                         <a class="dropdown-item" asp-controller="Events" asp-action="Index">Events</a>
                         <a class="dropdown-item" asp-controller="Locations" asp-action="Index">Locations</a>
                         <a class="dropdown-item" asp-controller="Tours" asp-action="Index">Brewery Tours</a>
                         <a class="dropdown-item" asp-controller="Blog" asp-action="Index">Blog/News</a>
                     </div>
                 </li>
+
+
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Contacts" asp-action="Index">Contact us</a>
                 </li>
@@ -33,7 +35,7 @@
                     {
                         if (await userManager.IsInRoleAsync(user, "admin"))
                         {
-                            <a asp-controller="admin" asp-action="Index" class="link">Admin</a>
+                            <a class="nav-link" asp-controller="admin" asp-action="Index" class="link">Admin</a>
                         }
                         else
                         {
@@ -41,11 +43,11 @@
                         }
                     }
 
-                    <a asp-controller="logout" asp-action="Index" class="link">Logout</a>
+                    <a class="nav-link" asp-controller="logout" asp-action="Index" class="link">Logout</a>
                 }
                 else
                 {
-                    <a asp-controller="Login" asp-action="Index" class="link">Login</a>
+                    <a class="nav-link" asp-controller="Login" asp-action="Index" class="link">Login</a>
                 }
             </ul>
         </div>

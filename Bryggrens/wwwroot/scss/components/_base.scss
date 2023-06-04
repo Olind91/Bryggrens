@@ -24,4 +24,58 @@ html, body {
 
 .invalid {
     border: 1px solid $color-theme-1 !important;
-} 
+}
+
+
+
+
+
+
+
+#popup-box {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    max-width: 300px;
+    z-index: 9999;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    display: inline-block;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.close-btn:hover {
+    background-color: #e63a3a;
+}
+
+.hidden {
+    display: none;
+}

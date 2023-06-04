@@ -11,6 +11,7 @@
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration:none;
 
     i {
         margin-right: 5px;
@@ -20,3 +21,69 @@
 .btn-everton:hover {
     background-color: #002b80;
 }
+
+
+.about-buttons button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.about-buttons button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.about-buttons button.active {
+    color: #000;
+    text-decoration: underline;
+    background-color: #f5f5f5;
+}
+
+
+
+.beer-categories button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards; 
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start with opacity 0 */
+        transform: translateY(10px); /* Move the buttons slightly downward */
+    }
+
+    100% {
+        opacity: 1; /* Fade in to full opacity */
+        transform: translateY(0); /* Reset the position */
+    }
+}
+
+
+
+.beer-categories button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.beer-categories button.active {
+    color: #000;
+    text-decoration: underline;
+    background-color: #f5f5f5;
+}
+
