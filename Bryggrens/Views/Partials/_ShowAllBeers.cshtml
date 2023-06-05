@@ -1,0 +1,33 @@
+﻿
+
+<div class="container">
+    <div class="beer-categories mt-4">
+        <button class="active" data-category="all" onclick="filterProducts('all')">All</button>
+        <button data-category="1" onclick="filterProducts(1)">NEIPA</button>
+        <button data-category="2" onclick="filterProducts(2)">Sour</button>
+        <button data-category="3" onclick="filterProducts(3)">Pale Ale</button>
+    </div>
+
+
+    <div id="productList">
+       
+        <div class="row mt-5">
+            @foreach (var product in Model)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="~/images/@product.ImageUrl" alt="@product.BeerName" style="height:270px; width:270px;"> <!-- Funkar inte -->
+                        <div class="card-body">
+                            <h5 class="card-title">Name: @product.BeerName</h5>
+                            <p class="card-text">Articlenumber: @product.ArticleNumber</p>
+                            <p class="card-text">Description : @product.BeerDescription</p>
+                            <p class="card-text">Alcohol: @product.AlcoholPercent%</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

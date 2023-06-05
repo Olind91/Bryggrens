@@ -26,6 +26,19 @@ namespace Bryggrens.Contexts
         public DbSet<BeerCategoriesEntity> BeerCategories { get; set; }
 
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+
+            builder.Entity<CategoryEntity>().HasData(
+                new CategoryEntity { Id = 1, CategoryName = "Neipa" },
+                new CategoryEntity { Id = 2, CategoryName = "Sour Beer" },
+                new CategoryEntity { Id = 3, CategoryName = "Pale Ale" }
+
+             );
+        }
+
     }
 
 }
