@@ -8,5 +8,7 @@ namespace Bryggrens.Helpers.Repositories
         public BeerCategoriesRepo(DataContext context) : base(context)
         {
         }
+
+
     }
 }

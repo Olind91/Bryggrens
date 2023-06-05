@@ -1,1 +1,24 @@
-﻿INFO OM BRYGGRENS SURÖL OCH KANSKE DE SOM FINNS?
+﻿@model IEnumerable<BeerEntity>
+
+<h1>Sour Beers</h1>
+
+@foreach (var product in Model)
+{
+   
+
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">@product.BeerName</h5>
+    <p class="card-text">
+        <p>@product.ArticleNumber</p>
+        <p>@product.BeerDescription</p>
+        <p>@product.BeerPrice</p>
+        <p>@product.AlcoholPercent</p>
+    </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+}

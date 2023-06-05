@@ -53,20 +53,6 @@ namespace Bryggrens.Controllers
         }
 
 
-        public async Task<IActionResult> Category(string categoryName)
-        {
-            var category = await _beerCategoryService.GetCategoryByNameAsync(categoryName);
-            if (category == null)
-            {
-                return NotFound();
-            }
-
-            var products = await _beerService.GetProductsByCategoryAsync(category.Id);
-            ViewBag.CategoryName = category.Name;
-            ViewBag.Products = products;
-
-            return View();
-        }
-
+        
     }
 }

@@ -64,6 +64,15 @@ namespace Bryggrens.Helpers.Services
 
         #region Get By Category ID
 
+        public async Task<IEnumerable<BeerEntity>> GetProductsByCategoryAsync(int categoryId)
+        {
+            return await _beerRepo.GetProductsByCategoryAsync(categoryId);
+        }
+
+
+
+
+
         #endregion
 
 

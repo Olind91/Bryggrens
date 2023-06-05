@@ -31,6 +31,8 @@ builder.Services.AddScoped<BeerCategoriesRepo>();
 builder.Services.AddScoped<BeerRepo>();
 builder.Services.AddScoped<CategoryRepo>();
 
+
+
 //Konfigurerar hur login ska fungera
 builder.Services.AddIdentity<AppUser, IdentityRole>(x =>
 {
@@ -55,6 +57,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
+
 
 app.UseStatusCodePagesWithReExecute("/Error/NotFoundView");
 app.MapControllerRoute(

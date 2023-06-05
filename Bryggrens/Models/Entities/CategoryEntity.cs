@@ -10,14 +10,19 @@ namespace Bryggrens.Models.Entities
 
 
 
-        public static implicit operator BeerCategory(CategoryEntity entity)
+        public static implicit operator BeerCategory(CategoryEntity? entity)
         {
+            if (entity == null)
+            {
+                return null!;
+            }
+
             return new BeerCategory
             {
                 Id = entity.Id,
                 CategoryName = entity.CategoryName,
-
             };
         }
+
     }
 }
