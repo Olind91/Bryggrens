@@ -26,7 +26,7 @@ namespace Bryggrens.Controllers
         }
 
 
-
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> CreateProduct()
         {
             ViewBag.CategorySelectList = await _beerCategoryService.GetCategorySelectListAsync();
@@ -43,6 +43,9 @@ namespace Bryggrens.Controllers
                 var product = await _beerService.CreateAsync(viewModel);
                 if (product != null)
                 {
+                    if(viewModel.ImageUrl != null)
+                        await _beerService.UploadImageAsync(product, viewModel.ImageUrl); //Verkar inte funka....
+                    
                     return RedirectToAction("Index");
                 }
 

@@ -12,6 +12,6 @@ namespace Bryggrens.Models.Entities
 
 
         public int CategoryId { get; set; }
-        public CategoryEntity Category { get; set; } = null!;
+        public CategoryEntity? Category { get; set; }
     }
 }

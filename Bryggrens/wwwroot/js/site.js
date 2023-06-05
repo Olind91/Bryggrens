@@ -74,42 +74,32 @@ function closePopup() {
 }
 
 
-function filterBeers(category) {
-    // Toggle button active state
+function filterProducts(category) {
     var allBtn = document.getElementById('allBtn');
-    var neipaBtn = document.getElementById('neipaBtn');
-    var sourBtn = document.getElementById('sourBtn');
-    var paleBtn = document.getElementById('paleBtn');
+    var categoryBtns = document.getElementsByClassName('beer-categories')[0].getElementsByTagName('button');
 
-    if (category === 'all') {
-        allBtn.classList.add('active');
-        neipaBtn.classList.remove('active');
-        sourBtn.classList.remove('active');
-        paleBtn.classList.remove('active');
+    allBtn.classList.remove('active');
+    for (var i = 0; i < categoryBtns.length; i++) {
+        categoryBtns[i].classList.remove('active');
+    }
 
-        // Show all beer items
-        var beerItems = document.getElementsByClassName('beer-item');
-        for (var i = 0; i < beerItems.length; i++) {
-            beerItems[i].style.display = 'block';
-        }
-    } else {
-        allBtn.classList.remove('active');
-        neipaBtn.classList.remove('active');
-        sourBtn.classList.remove('active');
-        paleBtn.classList.remove('active');
-
-        // Show beer items of the selected category and hide others
-        var beerItems = document.getElementsByClassName('beer-item');
-        for (var i = 0; i < beerItems.length; i++) {
-            var beerItem = beerItems[i];
-            if (beerItem.getAttribute('data-category') === category) {
-                beerItem.style.display = 'block';
-            } else {
-                beerItem.style.display = 'none';
-            }
+    var productItems = document.getElementsByClassName('card');
+    for (var i = 0; i < productItems.length; i++) {
+        var productItem = productItems[i];
+        var productCategories = productItem.getAttribute('data-categories').split(',');
+        if (category === 'all' || productCategories.includes(category)) {
+            productItem.style.display = 'block';
+        } else {
+            productItem.style.display = 'none';
         }
     }
+
+    if (category !== 'all') {
+        var activeCategoryBtn = document.querySelector('.beer-categories button[data-category="' + category + '"]');
+        activeCategoryBtn.classList.add('active');
+    }
 }
+
 
 
 

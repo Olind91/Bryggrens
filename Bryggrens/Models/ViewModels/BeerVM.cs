@@ -14,6 +14,7 @@ namespace Bryggrens.Models.ViewModels
 
         [DataType(DataType.Upload)]
         public IFormFile? ImageUrl { get; set; }
+        public List<string>? BeerCategories { get; set; }
 
         public string? SelectedCategory { get; set; }
 
@@ -28,7 +29,10 @@ namespace Bryggrens.Models.ViewModels
                 BeerDescription = viewModel.Description,
                 AlcoholPercent = viewModel.Alcohol,
                 BeerPrice = viewModel.Price
+
             };
+
+           
 
             if (!string.IsNullOrEmpty(viewModel.SelectedCategory))
             {
@@ -37,6 +41,10 @@ namespace Bryggrens.Models.ViewModels
                     CategoryId = int.Parse(viewModel.SelectedCategory)
                 });
             }
+
+            if (viewModel.ImageUrl != null)
+
+                entity.ImageUrl = $"{Guid.NewGuid}_{viewModel.ImageUrl?.FileName}";
 
             return entity;
         }

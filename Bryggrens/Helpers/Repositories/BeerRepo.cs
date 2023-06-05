@@ -19,13 +19,20 @@ namespace Bryggrens.Helpers.Repositories
                 .Where(b => b.BeerCategoriesList.Any(bc => bc.CategoryId == categoryId))
                 .ToListAsync();
         }
-
-
-
-
-
-
-
+        public override async Task<IEnumerable<BeerEntity>> GetAllAsync()
+        {
+            try
+            {
+                var items = await _context.Set<BeerEntity>()
+                    .Include(e => e.BeerCategoriesList)
+                    .ToListAsync();
+                return items!;
+            }
+            catch
+            {
+                return null!;
+            }
+        }
 
 
     }

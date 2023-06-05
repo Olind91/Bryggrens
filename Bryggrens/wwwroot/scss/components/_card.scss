@@ -1,0 +1,71 @@
+@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+
+
+.card {
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+.card img {
+    height: 270px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+@media (min-width: 768px) {
+    .card {
+        padding: 15px;
+    }
+}
+
+
+.card:hover {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+
+.card-title,
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.card-button {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    border: none;
+    border-radius: 5px;
+    background-color: #337ab7;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card-button:hover {
+    background-color: #23527c;
+}

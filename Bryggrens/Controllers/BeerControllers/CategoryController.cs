@@ -3,6 +3,7 @@ using Bryggrens.Helpers.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
+
 namespace Bryggrens.Controllers.BeerControllers
 {
     public class CategoryController : Controller
@@ -14,6 +15,18 @@ namespace Bryggrens.Controllers.BeerControllers
         {
            
             _beerRepo = beerRepo;
+        }
+
+        public async Task<IActionResult> Beers()
+        {
+            var products = await _beerRepo.GetAllAsync();
+            return View(products);
+        }
+
+        public async Task<IActionResult> FilterByCategory(int categoryId)
+        {
+            var products = await _beerRepo.GetProductsByCategoryAsync(categoryId);
+            return View("Beers", products);
         }
 
 

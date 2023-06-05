@@ -1,6 +1,7 @@
 ﻿using Bryggrens.Helpers.Repositories;
 using Bryggrens.Models.Dto;
 using Bryggrens.Models.Entities;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Bryggrens.Helpers.Services
 {
@@ -8,10 +9,12 @@ namespace Bryggrens.Helpers.Services
     {
 
         private readonly BeerRepo _beerRepo;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public BeerService(BeerRepo beerRepo)
+        public BeerService(BeerRepo beerRepo, IWebHostEnvironment webHostEnvironment)
         {
             _beerRepo = beerRepo;
+            _webHostEnvironment = webHostEnvironment;
         }
 
 
@@ -57,7 +60,17 @@ namespace Bryggrens.Helpers.Services
 
 
         #region Upload Image
-
+        public async Task<bool> UploadImageAsync(Beer product, IFormFile image)
+        {
+            try
+            {
+                string imagePath = $"{_webHostEnvironment.WebRootPath}/images/products/{product.ImageUrl}";
+                await image.CopyToAsync(new FileStream(imagePath, FileMode.Create));
+                
+                return true;
+            }
+            catch { return false; }
+        }
         #endregion
 
 

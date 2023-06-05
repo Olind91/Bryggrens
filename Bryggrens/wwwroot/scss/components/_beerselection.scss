@@ -18,6 +18,11 @@ h2 {
     text-align: center;
     margin-bottom: 30px;
 }
+h5 {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top:30px;
+}
 
 .beer-categories {
     text-align: center;
@@ -36,7 +41,7 @@ h2 {
 }
 
 .beer-categories button.active {
-    background-color: #ffca28;
+    background-color: dodgerblue;
 }
 
 .beer-list {

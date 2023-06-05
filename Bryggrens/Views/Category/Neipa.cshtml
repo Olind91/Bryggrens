@@ -1,24 +1,34 @@
 ﻿@model IEnumerable<BeerEntity>
 
-<h1>Neipa Beers</h1>
-
-@foreach (var product in Model)
-{
-   
-
-
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">@product.BeerName</h5>
-    <p class="card-text">
-        <p>@product.ArticleNumber</p>
-        <p>@product.BeerDescription</p>
-        <p>@product.BeerPrice</p>
-        <p>@product.AlcoholPercent</p>
+<div class="container">
+    <h1 class="mt-4">Neipa</h1>
+    <p>Step into the hazy and aromatic world of NEIPA (New England IPA), a beer style that has taken the craft beer scene by storm.
+        NEIPA is renowned for its cloudy appearance, juicy flavors, and tropical hop-forward profile, creating a sensory adventure like no other.
+        At Bryggrens, we are passionate about pushing the boundaries of flavor and embracing the innovative spirit of NEIPA. 
+        Our NEIPAs are characterized by their hazy, unfiltered appearance, which results from the generous use of hops and specialty malts.
+        This combination creates a velvety smooth mouthfeel and a luscious body that sets NEIPA apart.
+        Our NEIPAs burst with tropical and citrusy hop aromas that evoke visions of sun-drenched paradise. 
+        Expect bold flavors of juicy tropical fruits, such as mango, pineapple, and passionfruit, 
+        balanced with a subtle sweetness and a soft bitterness. The result is a beer that is both refreshingly vibrant and irresistibly smooth.
     </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
 
-}
+    <div id="productList">
+        <!-- Här visas produkterna dynamiskt -->
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="~/images/neipa.jpg" alt="@product.BeerName" style="height:270px; width:270px;"> <!-- Funkar inte -->
+                        <div class="card-body">
+                            <h5 class="card-title">Name: @product.BeerName</h5>
+                            <p class="card-text">Articlenumber: @product.ArticleNumber</p>
+                            <p class="card-text">Description : @product.BeerDescription</p>
+                            <p class="card-text">Alcohol: @product.AlcoholPercent%</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

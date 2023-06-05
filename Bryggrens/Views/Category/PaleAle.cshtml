@@ -1,24 +1,31 @@
 ﻿@model IEnumerable<BeerEntity>
-
-<h1>Pale Ales</h1>
-
-@foreach (var product in Model)
-{
-   
-
-
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">@product.BeerName</h5>
-    <p class="card-text">
-        <p>@product.ArticleNumber</p>
-        <p>@product.BeerDescription</p>
-        <p>@product.BeerPrice</p>
-        <p>@product.AlcoholPercent</p>
+<div class="container">
+    <h1 class="mt-4">Pale Ales</h1>
+    <p class="mt-3">
+        Discover the classic allure of Pale Ale, a beer style that strikes the perfect balance between hops, malt, and drinkability.
+        Pale Ale is known for its vibrant golden hue and a harmonious combination of flavors that make it a beloved choice among beer enthusiasts.
+        At Bryggrens, we are passionate about crafting exceptional Pale Ales that capture the essence of this timeless style.
+        Our Pale Ales showcase a moderate hop bitterness that is well-balanced by a slightly sweet and toasty malt backbone.
+        The hop character often features notes of citrus, pine, and floral aromas, providing a refreshing and aromatic drinking experience.
     </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
 
-}
+    <div id="productList">
+        <!-- Här visas produkterna dynamiskt -->
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="~/images/paleale.jpg" alt="@product.BeerName" style="height:270px; width:270px;"> <!-- Funkar inte -->
+                        <div class="card-body">
+                            <h5 class="card-title">Name: @product.BeerName</h5>
+                            <p class="card-text">Articlenumber: @product.ArticleNumber</p>
+                            <p class="card-text">Description : @product.BeerDescription</p>
+                            <p class="card-text">Alcohol: @product.AlcoholPercent%</p>                            
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -22,6 +22,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&display=swap");
 html, body {
   font-size: 16px;
   font-family: "Roboto", sans-serif;
@@ -347,6 +350,12 @@ h2 {
   margin-bottom: 30px;
 }
 
+h5 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
 .beer-categories {
   text-align: center;
   margin-bottom: 20px;
@@ -364,7 +373,7 @@ h2 {
 }
 
 .beer-categories button.active {
-  background-color: #ffca28;
+  background-color: dodgerblue;
 }
 
 .beer-list {
@@ -486,4 +495,64 @@ h2 {
   width: 100%;
   height: 80%;
   object-fit: cover;
+}
+
+.card {
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card img {
+  height: 270px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 15px;
+  }
+}
+.card:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card-title,
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  border: none;
+  border-radius: 5px;
+  background-color: #337ab7;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card-button:hover {
+  background-color: #23527c;
 }
