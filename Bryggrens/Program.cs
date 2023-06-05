@@ -19,12 +19,17 @@ builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configura
 //Services
 builder.Services.AddScoped<AddressService>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<BeerService>();
+builder.Services.AddScoped<BeerCategoryService>();
 
 
 
 //Repositories
 builder.Services.AddScoped<AddressRepository>();
 builder.Services.AddScoped<UserAddressRepository>();
+builder.Services.AddScoped<BeerCategoriesRepo>();
+builder.Services.AddScoped<BeerRepo>();
+builder.Services.AddScoped<CategoryRepo>();
 
 //Konfigurerar hur login ska fungera
 builder.Services.AddIdentity<AppUser, IdentityRole>(x =>

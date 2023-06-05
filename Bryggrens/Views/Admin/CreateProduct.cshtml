@@ -1,0 +1,61 @@
+﻿@model BeerVM
+
+<div class="container">
+    <form enctype="multipart/form-data" method="post" asp-action="CreateProduct" novalidate>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+        <div class="mb-3">
+            <label asp-for="ArticleNumber" class="form-label">Article Number</label>
+            <input asp-for="ArticleNumber" class="form-control" />
+            <span asp-validation-for="ArticleNumber" class="small text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Product Name</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="small text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label">Product Price</label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="small text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Product Description</label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="small text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Alcohol" class="form-label">Alcohol percent</label>
+            <input asp-for="Alcohol" class="form-control" />
+            <span asp-validation-for="Alcohol" class="small text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="SelectedCategory" class="form-label">Category</label>
+            <select asp-for="SelectedCategory" asp-items="ViewBag.CategorySelectList" class="form-control"></select>
+            <span asp-validation-for="SelectedCategory" class="small text-danger"></span>
+        </div>
+
+
+
+
+
+
+        <div class="mb-3">
+            <label asp-for="ImageUrl" class="form-label">Image</label>
+            <input asp-for="ImageUrl" class="form-control" />
+            <span asp-validation-for="ImageUrl" class="small text-danger"></span>
+        </div>
+
+        
+
+        <div>
+            <button class="btn-everton mb-5">Create product!</button>
+        </div>
+
+    </form>
+</div>
